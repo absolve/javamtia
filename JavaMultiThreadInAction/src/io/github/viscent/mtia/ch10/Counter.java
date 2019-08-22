@@ -36,19 +36,18 @@ http://www.broadview.com.cn/31065
  */
 package io.github.viscent.mtia.ch10;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 public class Counter {
-  private volatile long count;
+    private volatile long count;
 
-  public long vaule() {
-    return count;
-  }
+    public long vaule() {
+        return count;
+    }
 
-  @SuppressFBWarnings(value = "VO_VOLATILE_INCREMENT",
-      justification = "此处特意不加锁，以便测试代码能够报告相应错误")
-  public void increment() {
-    // 此处特意不加锁，以便测试代码能够报告相应错误
-    count++;
-  }
+//    @SuppressFBWarnings(value = "VO_VOLATILE_INCREMENT",
+//            justification = "此处特意不加锁，以便测试代码能够报告相应错误")
+    public void increment() {
+        // 此处特意不加锁，以便测试代码能够报告相应错误
+        count++;
+    }
 }
